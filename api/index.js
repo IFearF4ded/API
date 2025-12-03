@@ -8,7 +8,7 @@ module.exports = (req, res) => {
     req.on("end", () => {
       try {
         const data = JSON.parse(body);
-        messages.push(data); // append to list
+        messages.push(data); // append new message
         res.status(200).json({ status: "success", received: data });
       } catch (err) {
         res.status(400).json({ status: "error", message: "Invalid JSON" });
@@ -16,6 +16,7 @@ module.exports = (req, res) => {
     });
   } else if (req.method === "GET") {
     res.status(200).json({ messages });
+    messages = []; // clear messages after sending to receivers
   } else {
     res.status(405).json({ status: "error", message: "Method not allowed" });
   }
