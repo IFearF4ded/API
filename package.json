@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "a api",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "start": "vercel dev"
   },
@@ -10,3 +11,4 @@
   "license": "MIT",
   "dependencies": {}
 }
+
