@@ -1,0 +1,12 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "a api",
+  "main": "index.js",
+  "scripts": {
+    "start": "vercel dev"
+  },
+  "author": "faded",
+  "license": "MIT",
+  "dependencies": {}
+}
