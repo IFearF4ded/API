@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cookie Test</title>
+</head>
+<body>
+  <h1>Vercel Cookie API Test</h1>
+  <button id="testBtn">Send Cookies to API</button>
+  <pre id="output"></pre>
+
+  <script>
+    const btn = document.getElementById("testBtn");
+    const output = document.getElementById("output");
+
+    btn.addEventListener("click", async () => {
+      // Make a request to the cookies API
+      const res = await fetch("/api/cookies", {
+        method: "GET",
+        credentials: "include" // important for sending cookies
+      });
+      const data = await res.json();
+      output.textContent = JSON.stringify(data, null, 2);
+    });
+  </script>
+</body>
+</html>
