@@ -1,4 +1,3 @@
-// api/hello.js
-export default function handler(req, res) {
+module.exports = (req, res) => {
   res.status(200).json({ message: "Hello, world!" });
-}
+};
